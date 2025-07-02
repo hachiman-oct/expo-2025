@@ -31,6 +31,12 @@ jobs:
         run: npm install # または yarn install, pnpm install
       - name: Build Next.js app
         run: npm run build # このコマンドで out ディレクトリが生成される
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }} # Notion APIキーを環境変数として設定
+          NOTION_MAIN_PAGE_ID: ${{ secrets.NOTION_MAIN_PAGE_ID }} # NotionのメインページIDを環境変数として設定
+          NOTION_PREP_PAGE_ID: ${{ secrets.NOTION_PREP_PAGE_ID }} # Notionの準備ページIDを環境変数として設定
+          NOTION_PREP_APP_PAGE_ID: ${{ secrets.NOTION_PREP_APP_PAGE_ID }} # NotionのアプリページIDを環境変数として設定
+          NOTION_PAVILIONS_PAGE_ID: ${{ secrets.NOTION_PAVILIONS_PAGE_ID }} # NotionのパビリオンページIDを環境変数として設定
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
