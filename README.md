@@ -1,6 +1,14 @@
+
+11s
 Run npm run build
   npm run build
   shell: /usr/bin/bash -e {0}
+  env:
+    NOTION_API_KEY: ***
+    NOTION_MAIN_PAGE_ID: ***
+    NOTION_PREP_PAGE_ID: ***
+    NOTION_PREP_APP_PAGE_ID: ***
+    NOTION_PAVILIONS_PAGE_ID: 
 
 > expo-2025@0.1.0 build
 > next build
@@ -17,20 +25,18 @@ https://nextjs.org/telemetry
    Creating an optimized production build ...
  ✓ Compiled successfully in 3.0s
    Collecting page data ...
-Error: NOTION_API_KEY is not defined in .env.local
-    at 8258 (.next/server/pages/pavilions/[id].js:1:3388)
-    at o (.next/server/webpack-runtime.js:1:127)
-    at <unknown> (.next/server/pages/pavilions/[id].js:1:344)
-    at o.a (.next/server/webpack-runtime.js:1:866)
-    at 2011 (.next/server/pages/pavilions/[id].js:1:235)
-    at o (.next/server/webpack-runtime.js:1:127)
-    at <unknown> (.next/server/pages/pavilions/[id].js:1:3987)
-    at o.a (.next/server/webpack-runtime.js:1:866)
-    at 9593 (.next/server/pages/pavilions/[id].js:1:3588)
-    at o (.next/server/webpack-runtime.js:1:127)
-
-> Build error occurred
-[Error: Failed to collect page data for /pavilions/[id]] {
-  type: 'Error'
-}
+エラー: NOTION_PAVILIONS_DATABASE_ID が .env.local で getStaticPaths 用に設定されていません。
+   Generating static pages (0/5) ...
+エラー: NOTION_PAVILIONS_DATABASE_ID が .env.local で設定されていません。
+Error occurred prerendering page "/pavilions". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: ISR cannot be used with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+    at e3 (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:26:663)
+    at async exportPagesPage (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/export/routes/pages.js:80:28)
+    at async Span.traceAsyncFn (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/trace/trace.js:157:20)
+    at async exportPage (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/export/worker.js:357:18)
+    at async exportPageWithRetry (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/export/worker.js:247:26)
+    at async Promise.all (index 0)
+    at async Object.exportPages (/home/runner/work/expo-2025/expo-2025/node_modules/next/dist/export/worker.js:334:31)
+Export encountered an error on /pavilions, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null
 Error: Process completed with exit code 1.
