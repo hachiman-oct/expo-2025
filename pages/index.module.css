@@ -1,0 +1,16 @@
+.notion-header, /* ヘッダー */
+.notion-page-icon-image, /* ページアイコン */
+.notion-block-21d7953a3deb802b94fbc53f91b4247b, /* expo_visitors上空白 */
+.notion-block-2187953a3deb80cab33dc16e921f23d4, /* expo_visitors */
+.notion-block-21d7953a3deb80ce8162e2e0b0a0532e, /* 参考情報上空白 */
+.notion-block-21d7953a3deb807a81dfeee4e4ae3f8c /* 参考情報 */ {
+    display: none !important;
+}
+
+.notion-block-21e7953a3deb802e8405c02153de7e08 {
+    width: 100%;
+}
+
+.notion-page-has-cover {
+    padding-top: 16px !important;
+}

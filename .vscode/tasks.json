@@ -1,0 +1,16 @@
+{
+    // SCSSからCSSへの自動変換タスク
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile SCSS to CSS",
+            "type": "shell",
+            "command": "sass --watch src/style:src/style",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
