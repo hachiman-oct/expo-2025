@@ -30,6 +30,8 @@ export default function HomePage({ recordMap }: HomePageProps) {
             <Head>
                 <title>Expo 2025 - Main</title>
                 <link rel="icon" href="/expo-2025/favicon.ico" />
+                <link rel="manifest" href="/expo-2025/manifest.json" />
+                <link rel="apple-touch-icon" href="/expo-2025/icons/icon-180.png" />
             </Head>
 
             <main>
