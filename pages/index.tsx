@@ -11,9 +11,6 @@ import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css'; // コードブロックのハイライト用 (NotionRendererの依存)
 import 'katex/dist/katex.min.css'; // 数式のレンダリング用 (NotionRendererの依存)
 
-// カスタム CSS ファイル
-import styles from './index.module.css';
-
 const NOTION_MAIN_PAGE_ID = process.env.NOTION_MAIN_PAGE_ID as string;
 
 interface HomePageProps {
@@ -37,11 +34,11 @@ export default function HomePage({ recordMap }: HomePageProps) {
             <main>
                 <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
             </main>
-
+            {/* 
             <Script
                 src="/expo-2025/link-updater.js" // public フォルダからのパス
-                strategy="lazyOnload" // ロード戦略: ページがインタラクティブになった後、またはビューポートに入った後にロード
-            />
+                strategy="afterInteractive" // ロード戦略: ページがインタラクティブになった後、またはビューポートに入った後にロード
+            /> */}
         </div>
     );
 }
