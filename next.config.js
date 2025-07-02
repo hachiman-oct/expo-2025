@@ -9,8 +9,7 @@ const nextConfig = {
 
   images: {
     unoptimized: true, // GitHub Pagesではサーバー側の画像最適化ができないため無効化
-  },
-  // ... その他の設定
+  }
 };
 
 module.exports = nextConfig;

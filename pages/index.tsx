@@ -29,7 +29,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
         <div>
             <Head>
                 <title>Expo 2025 - Main</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/expo-2025/favicon.ico" />
             </Head>
 
             <main>
@@ -37,7 +37,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
             </main>
 
             <Script
-                src="link-updater.js" // public フォルダからのパス
+                src="/expo-2025/link-updater.js" // public フォルダからのパス
                 strategy="lazyOnload" // ロード戦略: ページがインタラクティブになった後、またはビューポートに入った後にロード
             />
         </div>
