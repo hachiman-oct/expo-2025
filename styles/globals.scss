@@ -190,3 +190,10 @@ body {
 .self-header * {
     box-sizing: border-box;
 }
+
+// 「listが親要素の幅を超える」問題の解消
+
+.notion-list {
+    width: 100%;
+    max-width: 100%;
+}
