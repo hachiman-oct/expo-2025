@@ -32,8 +32,8 @@ div.notion-page-icon-hero,
   width: 100%;
 }
 
-.notion {
-  font-family: var(--notion-font) !important;
+html {
+  font-family: var(--notion-font-family) !important;
 }
 
 body {
