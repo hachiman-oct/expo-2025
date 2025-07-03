@@ -37,6 +37,7 @@ export default function PavilionsPage({ pavilions }: PavilionsPageProps) {
             </Head>
 
             <main>
+
                 <h1>Expo 2025 行きたいパビリオン一覧</h1>
                 {pavilions.length === 0 ? (
                     <p>パビリオン情報が見つかりませんでした。NotionデータベースのID、共有設定、またはデータを確認してください。</p>

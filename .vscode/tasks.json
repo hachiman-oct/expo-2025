@@ -5,7 +5,17 @@
         {
             "label": "Compile SCSS to CSS",
             "type": "shell",
-            "command": "sass --watch src/style:src/style",
+            "command": "sass --watch styles:styles",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+                {
+            "label": "Compile SCSS to CSS (breadcrumb)",
+            "type": "shell",
+            "command": "sass --watch test-assets:test-assets",
             "group": {
                 "kind": "build",
                 "isDefault": true

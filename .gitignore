@@ -40,5 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-notion_database/
+test-assets/
 .hintrc
+*.css.map

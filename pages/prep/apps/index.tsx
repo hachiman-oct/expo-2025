@@ -24,7 +24,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
     return (
         <div>
             <Head>
-                <title>Expo 2025 - Prep / App</title>
+                <title>Expo 2025 - Prep / Apps</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
                 <link rel="icon" href="/expo-2025/favicon.ico" />
                 <link rel="manifest" href="/expo-2025/manifest.json" />

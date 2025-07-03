@@ -16,7 +16,7 @@ import 'katex/dist/katex.min.css'; // 数式のレンダリング用 (NotionRend
 
 const NOTION_PREP_PAGE_ID = process.env.NOTION_PREP_PAGE_ID as string;
 
-interface HomePageProps {
+interface PageProps {
     recordMap: ExtendedRecordMap;
 }
 
@@ -28,7 +28,7 @@ function updateNotionBlockLink(blockId: string, href: string) {
     }
 }
 
-export default function HomePage({ recordMap }: HomePageProps) {
+export default function Page({ recordMap }: PageProps) {
     useEffect(() => {
         updateNotionBlockLink("21d7953a3deb80778af2df0c17ac03a5", "/prep");
         updateNotionBlockLink("2157953a3deb804a9813c104ae24a32e", "/pavilions");
@@ -54,7 +54,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
     );
 }
 
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
     const notionApi = new NotionAPI();
     const recordMap = await notionApi.getPage(NOTION_PREP_PAGE_ID);
 
