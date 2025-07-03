@@ -34,7 +34,7 @@ interface PavilionDetailPageProps {
 export default function PavilionDetailPage({ pavilion, recordMap }: PavilionDetailPageProps) {
     if (!pavilion || !recordMap) {
         return (
-            <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+            <div>
                 <p>パビリオン情報の読み込みに失敗しました。</p>
                 <Link href="/pavilions" style={{ textDecoration: 'none', color: '#0070f3' }}>
                     一覧に戻る
@@ -48,11 +48,13 @@ export default function PavilionDetailPage({ pavilion, recordMap }: PavilionDeta
         <div>
             <Head>
                 <title>Expo 2025 - {pavilion.name}の詳細</title>
-                <meta name="description" content={`Expo 2025 のパビリオン ${pavilion.name} の詳細情報です。`} />
-                <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content={`Expo 2025 のパビリオン ${pavilion.name} の詳細情報`} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+                <link rel="icon" href="/expo-2025/favicon.ico" />
+                <link rel="manifest" href="/expo-2025/manifest.json" />
             </Head>
 
-            <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+            <main>
                 <h1>{pavilion.name}</h1>
                 {/* ★ 追加: プロパティ情報を表示 ★ */}
                 <p><strong>所要時間:</strong> {pavilion.duration || '不明'}</p>
@@ -61,11 +63,11 @@ export default function PavilionDetailPage({ pavilion, recordMap }: PavilionDeta
                 <p><strong>受付方法:</strong> {pavilion.receptionMethod || '不明'}</p>
                 {/* ... 必要に応じて、他のプロパティもここに追加 ... */}
 
-                <hr style={{ margin: '30px 0' }} />
+                <hr/>
                 {/* Notion のページコンテンツをレンダリング */}
                 <NotionRenderer recordMap={recordMap} fullPage={false} darkMode={false} />
 
-                <hr style={{ margin: '30px 0' }} />
+                <hr/>
                 <Link href="/pavilions" style={{ textDecoration: 'none', color: '#0070f3' }}>
                     &larr; パビリオン一覧に戻る
                 </Link>

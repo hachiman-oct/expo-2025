@@ -4,7 +4,6 @@ import { NotionAPI } from 'notion-client'; // react-notion-x のクライアン�
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
 import Head from 'next/head';
-import Script from 'next/script';
 
 // CSS をインポートすることで Notiion のスタイルを適用
 import 'react-notion-x/src/styles.css';
@@ -26,6 +25,8 @@ export default function HomePage({ recordMap }: HomePageProps) {
         <div>
             <Head>
                 <title>Expo 2025 - Main</title>
+                <meta name="description" content="Expo 2025 Infomations by hachiman-oct" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
                 <link rel="icon" href="/expo-2025/favicon.ico" />
                 <link rel="manifest" href="/expo-2025/manifest.json" />
                 <link rel="apple-touch-icon" href="/expo-2025/icons/icon-180.png" />
@@ -34,11 +35,6 @@ export default function HomePage({ recordMap }: HomePageProps) {
             <main>
                 <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
             </main>
-            {/* 
-            <Script
-                src="/expo-2025/link-updater.js" // public フォルダからのパス
-                strategy="afterInteractive" // ロード戦略: ページがインタラクティブになった後、またはビューポートに入った後にロード
-            /> */}
         </div>
     );
 }

@@ -4,47 +4,31 @@ import { NotionAPI } from 'notion-client'; // react-notion-x のクライアン�
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
 import Head from 'next/head';
-import { useEffect } from 'react';
 
 // CSS をインポートすることで Notiion のスタイルを適用
 import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css'; // コードブロックのハイライト用 (NotionRendererの依存)
 import 'katex/dist/katex.min.css'; // 数式のレンダリング用 (NotionRendererの依存)
 
-// カスタム CSS ファイル
-// import './style.css';
-
-const NOTION_PREP_PAGE_ID = process.env.NOTION_PREP_PAGE_ID as string;
+const NOTION_MAIN_PAGE_ID = process.env.NOTION_MAIN_PAGE_ID as string;
 
 interface HomePageProps {
     recordMap: ExtendedRecordMap;
 }
 
-// リンク書き換え用の共通関数
-function updateNotionBlockLink(blockId: string, href: string) {
-    const el = document.querySelector<HTMLAnchorElement>(`a.notion-block-${blockId}`);
-    if (el) {
-        el.href = href;
-    }
-}
-
 export default function HomePage({ recordMap }: HomePageProps) {
-    useEffect(() => {
-        updateNotionBlockLink("21d7953a3deb80778af2df0c17ac03a5", "/prep");
-        updateNotionBlockLink("2157953a3deb804a9813c104ae24a32e", "/pavilions");
-    }, []);
-
     if (!recordMap) {
-        return <div>ページの読み込みに失敗しました。</div>;
+        return <div>ページの読み込みに失敗しました</div>;
     }
 
     return (
         <div>
             <Head>
-                <title>Expo 2025 - Main</title>
+                <title>Expo 2025 - Prep / App</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
                 <link rel="icon" href="/expo-2025/favicon.ico" />
                 <link rel="manifest" href="/expo-2025/manifest.json" />
+                <link rel="apple-touch-icon" href="/expo-2025/icons/icon-180.png" />
             </Head>
 
             <main>
@@ -56,7 +40,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const notionApi = new NotionAPI();
-    const recordMap = await notionApi.getPage(NOTION_PREP_PAGE_ID);
+    const recordMap = await notionApi.getPage(NOTION_MAIN_PAGE_ID);
 
     return {
         props: {

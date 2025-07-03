@@ -29,39 +29,40 @@ export default function PavilionsPage({ pavilions }: PavilionsPageProps) {
     return (
         <div>
             <Head>
-                <title>Expo 2025 - 行きたいパビリオン一覧</title>
-                <meta name="description" content="Expo 2025 大阪・関西万博で行きたいパビリオンの一覧です。" />
-                <link rel="icon" href="/favicon.ico" />
+                <title>Expo 2025 - Pavilions</title>
+                <meta name="description" content="Expo 2025 大阪・関西万博で行きたいパビリオンの一覧" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+                <link rel="icon" href="/expo-2025/favicon.ico" />
+                <link rel="manifest" href="/expo-2025/manifest.json" />
             </Head>
 
-            <main style={{ maxWidth: '900px', margin: '0 auto', padding: '20px' }}> {/* max-widthを少し広げた */}
+            <main>
                 <h1>Expo 2025 行きたいパビリオン一覧</h1>
                 {pavilions.length === 0 ? (
                     <p>パビリオン情報が見つかりませんでした。NotionデータベースのID、共有設定、またはデータを確認してください。</p>
                 ) : (
-                    // ★ 修正: テーブルで表示 ★
-                    <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
+                    <table className="pavilions-table">
                         <thead>
-                            <tr style={{ borderBottom: '2px solid #ddd' }}>
-                                <th style={{ padding: '10px', textAlign: 'left' }}>パビリオン名</th>
-                                <th style={{ padding: '10px', textAlign: 'left' }}>所要時間</th>
-                                <th style={{ padding: '10px', textAlign: 'left' }}>場所</th>
-                                <th style={{ padding: '10px', textAlign: 'left' }}>運営時間</th>
-                                <th style={{ padding: '10px', textAlign: 'left' }}>受付方法</th>
+                            <tr>
+                                <th>パビリオン名</th>
+                                <th>所要時間</th>
+                                <th>場所</th>
+                                <th>運営時間</th>
+                                <th>受付方法</th>
                             </tr>
                         </thead>
                         <tbody>
                             {pavilions.map((pavilion) => (
-                                <tr key={pavilion.id} style={{ borderBottom: '1px solid #eee' }}>
-                                    <td style={{ padding: '10px' }}>
+                                <tr key={pavilion.id}>
+                                    <td>
                                         <Link href={`/pavilions/${pavilion.id}`} style={{ textDecoration: 'none', color: '#0070f3', fontWeight: 'bold' }}>
                                             {pavilion.name}
                                         </Link>
                                     </td>
-                                    <td style={{ padding: '10px' }}>{pavilion.duration || '不明'}</td>
-                                    <td style={{ padding: '10px' }}>{pavilion.location || '不明'}</td>
-                                    <td style={{ padding: '10px' }}>{pavilion.operatingHours || '不明'}</td>
-                                    <td style={{ padding: '10px' }}>{pavilion.receptionMethod || '不明'}</td>
+                                    <td>{pavilion.duration || '不明'}</td>
+                                    <td>{pavilion.location || '不明'}</td>
+                                    <td>{pavilion.operatingHours || '不明'}</td>
+                                    <td>{pavilion.receptionMethod || '不明'}</td>
                                 </tr>
                             ))}
                         </tbody>

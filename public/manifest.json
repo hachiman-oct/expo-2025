@@ -1,6 +1,7 @@
 {
-    "name": "MP3倍速プレイヤー",
-    "short_name": "MP3プレイヤー",
+    "name": "Expo 2025 Info",
+    "short_name": "Expo Info",
+    "description": "Expo 2025 Infomations by hachiman-oct",
     "start_url": "/expo-2025/index.html",
     "display": "standalone",
     "background_color": "#ffffff",

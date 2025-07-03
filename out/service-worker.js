@@ -5,6 +5,14 @@ self.addEventListener('install', (event) => {
                 '/',
                 '/index.html',
                 '/manifest.json',
+                '/favicon.ico',
+                '/icons/icon-192.png',
+                '/icons/icon-512.png',
+                '/icons/icon-180.png',
+                '/link-updater.js',
+                '/prep',
+                '/prep/apps',
+                '/pavilions',
             ]);
         })
     );

@@ -1,5 +1,4 @@
-.notion-header, /* ヘッダー */
-.notion-page-icon-image, /* ページアイコン */
+div.notion-page-icon-hero.notion-page-icon-image, /* ヒーローイメージ */
 .notion-block-21d7953a3deb802b94fbc53f91b4247b, /* expo_visitors上空白 */
 .notion-block-2187953a3deb80cab33dc16e921f23d4, /* expo_visitors */
 .notion-block-21d7953a3deb80ce8162e2e0b0a0532e, /* 参考情報上空白 */
@@ -13,4 +12,27 @@
 
 .notion-page-has-cover {
     padding-top: 16px !important;
+}
+
+.pavilions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pavilions-table thead tr {
+    border-bottom: 2px solid #ddd;
+}
+
+.pavilions-table th {
+    padding: 10px;
+    text-align: left;
+}
+
+.pavilions-table td {
+    padding: 10px;
+}
+
+.pavilions-table tbody tr {
+    border-bottom: 1px solid #eee;
 }
