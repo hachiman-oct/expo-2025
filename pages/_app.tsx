@@ -33,10 +33,10 @@ function updateLinks(linkMap: [string, string][], currentBasePath: string) {
 
 // 更新したいリンクのマッピングを定義（_app.tsx内で定義）
 const linkMapping: [string, string][] = [
-  ["/20f7953a3deb8019ab38fca64d2fda63", "/expo"],
-  ["/21d7953a3deb80778af2df0c17ac03a5", "/expo/prep"],
-  ["/2157953a3deb804a9813c104ae24a32e", "/expo/pavilions"],
-  ["/21f7953a3deb80398167c09a78bbc93f", "/expo/prep/app"],
+  ["/20f7953a3deb8019ab38fca64d2fda63", "/"],
+  ["/21d7953a3deb80778af2df0c17ac03a5", "/prep"],
+  ["/2157953a3deb804a9813c104ae24a32e", "/pavilions"],
+  ["/21f7953a3deb80398167c09a78bbc93f", "/prep/app"],
 ];
 
 export default function MyApp({ Component, pageProps }: AppProps) {
