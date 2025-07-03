@@ -30,7 +30,7 @@ export default function HomePage({ recordMap }: HomePageProps) {
                 <link rel="icon" href="/expo-2025/favicon.ico" />
                 <link rel="manifest" href="/expo-2025/manifest.json" />
                 <link rel="apple-touch-icon" href="/expo-2025/icons/icon-180.png" />
-                <meta name="apple-mobile-web-app-capable" content="yes" />
+                {/* <meta name="apple-mobile-web-app-capable" content="yes" /> */}
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
             </Head>
 
