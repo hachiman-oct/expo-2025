@@ -13,6 +13,7 @@ self.addEventListener('install', (event) => {
                 '/prep',
                 '/prep/apps',
                 '/pavilions',
+                '/logos/logo-66.png',
             ]);
         })
     );
