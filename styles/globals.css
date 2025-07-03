@@ -5,15 +5,15 @@
   --self-fg-color-1: #37352f29;
   --self-fg-color-2: rgba(55, 53, 47, 0.4);
   --self-bg-color: #fff;
-  --self-bg-color-0: rgba(135, 131, 120, 0.15);
   --self-bb-color: rgba(55, 53, 47, .4);
+  --self-bg-color-0: rgba(135, 131, 120, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --self-fg-color: #f3f3f3;
     --self-fg-color-1: rgba(255, 255, 255, 0.13);
-    --self-fg-color-2: rgba(55, 53, 47, 0.4);
+    --self-fg-color-2: rgba(255, 255, 255, 0.13);
     --self-bg-color: #18191a;
     --self-bb-color: rgba(255, 255, 255, 0.283);
   }
@@ -34,19 +34,26 @@ div.notion-page-icon-hero,
 body {
   background-color: var(--self-bg-color) !important;
   color: var(--self-fg-color) !important;
+  box-sizing: border-box !important;
 }
 
-.notion {
+.notion,
+.notion *:not(.self-header):not(.notion-header) {
   color: inherit !important;
   background-color: inherit !important;
 }
 
 .notion * {
-  color: inherit !important;
-  background-color: inherit !important;
+  box-sizing: inherit !important;
 }
 
-.notion-bookmark, .notion-table-of-contents {
+.self-header,
+.notion-header {
+  background-color: var(--self-bg-color) !important;
+}
+
+.notion-bookmark,
+.notion-table-of-contents {
   border: 1px solid var(--self-fg-color-1) !important;
 }
 

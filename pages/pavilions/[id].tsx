@@ -55,6 +55,27 @@ export default function PavilionDetailPage({ pavilion, recordMap }: PavilionDeta
             </Head>
 
             <main>
+                <header className="self-header">
+                    <div className="self-nav-header">
+                        <div className="breadcrumbs">
+                            <a className="breadcrumb" href="/expo-2025">
+                                <div className="self-page-icon-inline">
+                                    <img className="self-page-icon" src="/expo-2025/logos/logo-66.png" alt=" Expo 2025 Osaka" loading="lazy"
+                                        decoding="async" />
+                                </div>
+                                <span className="title"> Expo 2025 Osaka</span>
+                            </a>
+                            <span className="spacer">/</span>
+                            <a className="breadcrumb" href="/expo-2025/pavilions">
+                                <span className="title"> Pavilions</span>
+                            </a>
+                            <span className="spacer">/</span>
+                            <div className="breadcrumb active">
+                                <span className="title">{pavilion.name}</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
                 <h1>{pavilion.name}</h1>
                 {/* ★ 追加: プロパティ情報を表示 ★ */}
                 <p><strong>所要時間:</strong> {pavilion.duration || '不明'}</p>
@@ -63,11 +84,11 @@ export default function PavilionDetailPage({ pavilion, recordMap }: PavilionDeta
                 <p><strong>受付方法:</strong> {pavilion.receptionMethod || '不明'}</p>
                 {/* ... 必要に応じて、他のプロパティもここに追加 ... */}
 
-                <hr/>
+                <hr />
                 {/* Notion のページコンテンツをレンダリング */}
                 <NotionRenderer recordMap={recordMap} fullPage={false} darkMode={false} />
 
-                <hr/>
+                <hr />
                 <Link href="/pavilions" style={{ textDecoration: 'none', color: '#0070f3' }}>
                     &larr; パビリオン一覧に戻る
                 </Link>
@@ -83,7 +104,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         console.error('エラー: NOTION_PAVILIONS_DATABASE_ID が .env.local で getStaticPaths 用に設定されていません。');
         return {
             paths: [],
-            fallback: 'blocking', // エラー時は新しいリクエスト時に生成を試みる
+            fallback: false,
         };
     }
 
@@ -107,13 +128,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
         return {
             paths,
-            fallback: 'blocking', // 新しいページが追加された場合、次回のリクエスト時に生成 (ISR)
+            fallback: false, // ← blocking から false に修正
         };
     } catch (error) {
         console.error('Notion からのパビリオンパスの取得に失敗しました:', error);
         return {
             paths: [],
-            fallback: 'blocking',
+            fallback: false, // ← blocking から false に修正
         };
     }
 };

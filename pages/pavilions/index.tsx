@@ -37,7 +37,22 @@ export default function PavilionsPage({ pavilions }: PavilionsPageProps) {
             </Head>
 
             <main>
-
+                <header className="self-header">
+                    <div className="self-nav-header">
+                        <div className="breadcrumbs">
+                            <a className="breadcrumb" href="/expo-2025/">
+                                <div className="self-page-icon-inline">
+                                    <img className="self-page-icon"
+                                        src="/expo-2025/logos/logo-66.png"
+                                        alt=" Expo 2025 Osaka" loading="lazy" decoding="async" />
+                                </div>
+                                <span className="title"> Expo 2025 Osaka</span>
+                            </a>
+                            <span className="spacer">/</span>
+                            <div className="breadcrumb active"><span className="title">Pavilions</span></div>
+                        </div>
+                    </div>
+                </header>
                 <h1>Expo 2025 行きたいパビリオン一覧</h1>
                 {pavilions.length === 0 ? (
                     <p>パビリオン情報が見つかりませんでした。NotionデータベースのID、共有設定、またはデータを確認してください。</p>
