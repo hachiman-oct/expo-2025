@@ -7,6 +7,7 @@
   --self-bg-color: #fff;
   --self-bb-color: rgba(55, 53, 47, .4);
   --self-bg-color-0: rgba(135, 131, 120, 0.15);
+  --notion-font-family: ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +30,10 @@ div.notion-page-icon-hero,
 
 .notion-block-21e7953a3deb802e8405c02153de7e08 {
   width: 100%;
+}
+
+.notion {
+  font-family: var(--notion-font) !important;
 }
 
 body {
@@ -61,22 +66,25 @@ body {
   border-color: var(--self-bb-color-2) !important;
 }
 
-.pavilions-table {
+.pavilions-table-container {
+  overflow-x: auto;
+}
+.pavilions-table-container table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
-.pavilions-table thead tr {
+.pavilions-table-container thead tr {
   border-bottom: 2px solid #ddd;
 }
-.pavilions-table th,
-.pavilions-table td {
+.pavilions-table-container th,
+.pavilions-table-container td {
   padding: 10px;
 }
-.pavilions-table th {
+.pavilions-table-container th {
   text-align: left;
 }
-.pavilions-table tbody tr {
+.pavilions-table-container tbody tr {
   border-bottom: 1px solid #eee;
 }
 

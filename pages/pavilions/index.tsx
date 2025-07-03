@@ -57,32 +57,34 @@ export default function PavilionsPage({ pavilions }: PavilionsPageProps) {
                 {pavilions.length === 0 ? (
                     <p>パビリオン情報が見つかりませんでした。NotionデータベースのID、共有設定、またはデータを確認してください。</p>
                 ) : (
-                    <table className="pavilions-table">
-                        <thead>
-                            <tr>
-                                <th>パビリオン名</th>
-                                <th>所要時間</th>
-                                <th>場所</th>
-                                <th>運営時間</th>
-                                <th>受付方法</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {pavilions.map((pavilion) => (
-                                <tr key={pavilion.id}>
-                                    <td>
-                                        <Link href={`/pavilions/${pavilion.id}`} style={{ textDecoration: 'none', color: '#0070f3', fontWeight: 'bold' }}>
-                                            {pavilion.name}
-                                        </Link>
-                                    </td>
-                                    <td>{pavilion.duration || '不明'}</td>
-                                    <td>{pavilion.location || '不明'}</td>
-                                    <td>{pavilion.operatingHours || '不明'}</td>
-                                    <td>{pavilion.receptionMethod || '不明'}</td>
+                    <div className="pavilions-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>パビリオン名</th>
+                                    <th>所要時間</th>
+                                    <th>場所</th>
+                                    <th>運営時間</th>
+                                    <th>受付方法</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {pavilions.map((pavilion) => (
+                                    <tr key={pavilion.id}>
+                                        <td>
+                                            <Link href={`/pavilions/${pavilion.id}`} style={{ textDecoration: 'none', color: '#0070f3', fontWeight: 'bold' }}>
+                                                {pavilion.name}
+                                            </Link>
+                                        </td>
+                                        <td>{pavilion.duration || '不明'}</td>
+                                        <td>{pavilion.location || '不明'}</td>
+                                        <td>{pavilion.operatingHours || '不明'}</td>
+                                        <td>{pavilion.receptionMethod || '不明'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 )}
             </main>
         </div>
