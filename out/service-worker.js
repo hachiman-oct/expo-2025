@@ -9,7 +9,6 @@ self.addEventListener('install', (event) => {
                 '/expo-2025/icons/icon-192.png',
                 '/expo-2025/icons/icon-512.png',
                 '/expo-2025/icons/icon-180.png',
-                '/expo-2025/link-updater.js',
                 '/expo-2025/prep',
                 '/expo-2025/prep/index.html',
                 '/expo-2025/prep/apps',
